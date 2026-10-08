@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Be Present With Me — Personal Telepresence in New York</title>
+<meta name="description" content="A real person in New York who brings you into meetings, events, shopping, walks, inspections and professional tasks through live mobile video.">
+<style>
+:root{
+  --ink:#171717;
+  --paper:#f6f1e8;
+  --paper2:#fffdf9;
+  --accent:#76b9b0;
+  --accent-dark:#2f6f68;
+  --gold:#b08d57;
+  --line:rgba(23,23,23,.14);
+  --muted:#6c6a66;
+  --shadow:0 18px 55px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height:1.55;
+}
+h1,h2,h3{
+  font-family:Georgia, "Times New Roman", serif;
+  font-weight:500;
+  letter-spacing:-.02em;
+  margin:0;
+}
+a{color:inherit}
+.container{width:min(1180px,92vw);margin:auto}
+.nav{
+  position:sticky;top:0;z-index:10;
+  backdrop-filter: blur(16px);
+  background:rgba(246,241,232,.86);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:Georgia,serif;font-size:1.35rem;letter-spacing:.02em}
+.brand span{color:var(--accent-dark)}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:.95rem}
+.nav-links a{text-decoration:none}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.9rem 1.25rem;border-radius:999px;text-decoration:none;
+  border:1px solid var(--ink);font-weight:650;transition:.2s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--ink);color:white}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#0c2825}
+.hero{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;
+  padding:72px 0 54px;
+}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;color:var(--accent-dark);font-weight:800}
+.hero h1{font-size:clamp(3rem,6vw,6.5rem);line-height:.93;margin:.75rem 0 1.25rem}
+.hero p{font-size:1.12rem;color:#393735;max-width:670px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-media{position:relative}
+.hero-media img{width:100%;display:block;border-radius:28px;box-shadow:var(--shadow)}
+.floating-card{
+  position:absolute;left:-24px;bottom:28px;max-width:260px;
+  background:rgba(255,253,249,.96);border:1px solid var(--line);
+  border-radius:18px;padding:16px 18px;box-shadow:var(--shadow)
+}
+.floating-card strong{display:block;margin-bottom:.25rem}
+.floating-card small{color:var(--muted)}
+.trust-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:18px 0 70px
+}
+.trust{
+  border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:.94rem
+}
+.section{padding:84px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+.section-head h2{font-size:clamp(2.1rem,4vw,4.2rem);line-height:1}
+.section-head p{max-width:560px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--paper2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.card-body{padding:18px}
+.card h3{font-size:1.4rem;margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.95rem;margin:0}
+.band{
+  background:var(--ink);color:white;padding:74px 0;
+}
+.band-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.band img{width:100%;border-radius:24px}
+.band h2{font-size:clamp(2.5rem,4.5vw,5rem);line-height:.95}
+.band p{color:#ddd8d0;font-size:1.05rem}
+.list{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px
+}
+.list div{padding:14px 0;border-top:1px solid rgba(255,255,255,.18)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{padding:26px;border:1px solid var(--line);background:var(--paper2);border-radius:18px}
+.step-num{font-family:Georgia,serif;font-size:2.8rem;color:var(--accent-dark)}
+.step h3{font-size:1.35rem;margin:.2rem 0 .5rem}
+.step p{margin:0;color:var(--muted)}
+.feature{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center
+}
+.feature img{width:100%;border-radius:24px;box-shadow:var(--shadow)}
+.feature h2{font-size:clamp(2.4rem,4vw,4.5rem);line-height:1}
+.quote{
+  font-family:Georgia,serif;font-size:1.35rem;line-height:1.4;
+  border-left:3px solid var(--accent);padding-left:18px;margin:24px 0
+}
+.contact{
+  background:#e9eee9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start}
+.contact-card{
+  background:var(--paper2);border:1px solid var(--line);border-radius:20px;padding:26px
+}
+.contact-card dl{display:grid;grid-template-columns:110px 1fr;gap:10px 14px;margin:0}
+.contact-card dt{color:var(--muted)}
+.contact-card dd{margin:0}
+.meet-box{
+  margin-top:22px;padding:20px;border-radius:18px;background:var(--ink);color:white
+}
+.meet-box p{color:#ddd8d0;margin:.4rem 0 1rem}
+footer{padding:34px 0;color:var(--muted);font-size:.9rem}
+footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){
+  .hero,.band-grid,.feature,.contact-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .how{grid-template-columns:1fr}
+  .hero-media{order:-1}
+  .floating-card{left:14px}
+}
+@media(max-width:600px){
+  .nav-links a:not(.btn){display:none}
+  .cards{grid-template-columns:1fr}
+  .trust-row{grid-template-columns:1fr}
+  .list{grid-template-columns:1fr}
+  .hero{padding-top:34px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">Be Present <span>With Me</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-accent" href="https://meet.google.com/pwh-pkdj-iqq" target="_blank" rel="noopener">Join on Google Meet</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="container hero">
+    <div>
+      <div class="eyebrow">Personal telepresence • New York & USA</div>
+      <h1>Be there.<br>Without being there.</h1>
+      <p>
+        A real person becomes your eyes, ears and presence on the ground — bringing you live into meetings,
+        events, shopping, walks, inspections and professional tasks through mobile video.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://meet.google.com/pwh-pkdj-iqq" target="_blank" rel="noopener">Start a video call</a>
+        <a class="btn" href="mailto:bepresentwithme@gmail.com?subject=Be%20Present%20With%20Me%20request">Request a presence</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="images/newyork.png" alt="Francesca in New York with an iPad video call">
+      <div class="floating-card">
+        <strong>Your person on the ground.</strong>
+        <small>Live, mobile and interactive — wherever you need to be present.</small>
+      </div>
+    </div>
+  </section>
+
+  <div class="container trust-row">
+    <div class="trust"><strong>Live & interactive</strong><br>You can speak, ask, inspect and decide in real time.</div>
+    <div class="trust"><strong>Human presence</strong><br>A real person acts locally while you participate remotely.</div>
+    <div class="trust"><strong>Flexible</strong><br>From a short errand to a meeting, event or professional task.</div>
+  </div>
+
+  <section id="services" class="section container">
+    <div class="section-head">
+      <h2>Four ways to be present.</h2>
+      <p>From business to curiosity, the experience is designed around one simple idea: you are not watching from afar — you are taking part.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <img src="images/meeting.png" alt="Live participation in a meeting">
+        <div class="card-body">
+          <h3>Meetings</h3>
+          <p>Join the crucial moments of a meeting with a real local presence carrying you into the room.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="images/events.png" alt="Live participation at events">
+        <div class="card-body">
+          <h3>Events</h3>
+          <p>Art shows, auctions, exhibitions and encounters — participate live while your local companion moves with you.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="images/shopping.png" alt="Live shopping assistance">
+        <div class="card-body">
+          <h3>Shopping</h3>
+          <p>See, compare, ask questions and make choices in real time, as if you were standing in the store yourself.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="images/stroll.png" alt="Live remote walk in New York">
+        <div class="card-body">
+          <h3>Walks & discovery</h3>
+          <p>Explore a neighborhood, a street, a venue or simply enjoy a live, human walk through the city.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container band-grid">
+      <img src="images/auction.png" alt="Francesca participating in an art auction">
+      <div>
+        <div class="eyebrow" style="color:#9dd4cc">More than a video call</div>
+        <h2>A real presence that can act.</h2>
+        <p>
+          The service can also support inspections, on-site checks and professional assignments where a remote client
+          needs to observe details, ask for closer views and participate actively in key moments.
+        </p>
+        <div class="list">
+          <div>On-site inspections</div>
+          <div>Property or object checks</div>
+          <div>Professional assignments</div>
+          <div>Active visual verification</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section container">
+    <div class="section-head">
+      <h2>How it works.</h2>
+      <p>Simple enough for spontaneous use, structured enough for professional tasks.</p>
+    </div>
+    <div class="how">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Tell us where you need to be</h3>
+        <p>Describe the place, purpose, timing and what you need to see, ask or accomplish.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>We connect live</h3>
+        <p>Join by Google Meet on your phone, tablet or computer. You stay connected throughout the experience.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>You participate in real time</h3>
+        <p>Direct the view, ask questions, request details and make decisions as events unfold.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container feature">
+    <div>
+      <div class="eyebrow">Your local companion</div>
+      <h2>Presence with judgement, discretion and style.</h2>
+      <p class="quote">“I make you present at meetings, events, shopping — or maybe just for a romantic stroll and a little browsing.”</p>
+      <p style="color:var(--muted)">
+        Be Present With Me is designed for moments when a screen alone is not enough. The value is in having a trusted person
+        physically there, able to move, observe, interact and bring you into the moment.
+      </p>
+    </div>
+    <img src="images/francesca.png" alt="Francesca T">
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2 style="font-size:clamp(2.4rem,4vw,4.5rem);line-height:1;margin:.4rem 0 1rem">Ready to be present?</h2>
+        <p style="color:var(--muted);max-width:600px">
+          Send a request or enter the public Google Meet room directly. For planned activities, email first so time, place and scope can be agreed.
+        </p>
+      </div>
+      <div class="contact-card">
+        <dl>
+          <dt>Name</dt><dd>Francesca T</dd>
+          <dt>Phone</dt><dd><a href="tel:+1212817433">+001 212 817433</a></dd>
+          <dt>Address</dt><dd>115 Street W, NY, NY</dd>
+          <dt>Email</dt><dd><a href="mailto:bepresentwithme@gmail.com">bepresentwithme@gmail.com</a></dd>
+        </dl>
+        <div class="meet-box">
+          <strong>Public Google Meet</strong>
+          <p>Enter the video room directly from any browser or the Google Meet app.</p>
+          <a class="btn btn-accent" href="https://meet.google.com/pwh-pkdj-iqq" target="_blank" rel="noopener">Join video call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© Be Present With Me</div>
+    <div>New York • USA • Remote participation, real human presence.</div>
+  </div>
+</footer>
+</body>
+</html>
